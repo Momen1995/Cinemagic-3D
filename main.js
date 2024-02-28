@@ -374,10 +374,15 @@ function displayModal(){
         <p><strong>Price:</strong>${price}৳</p>
         <p><strong>VAT:</strong>${vat}৳</p>
         <p><strong>Subtotal:</strong>${totalPrice}৳</p>
-        <button class="btn btn-danger fw-bold mt-3">Buy Now</button>
+        <button class="btn btn-danger fw-bold mt-3 buy-now">Buy Now</button>
         `;
 
-        
+        //close btn
+        const close = document.querySelector(".close-btn");
+        close.addEventListener("click",function(){
+          modalWindow.style.opacity = 0;
+          modalWindow.style.visibility = "hidden";
+        })
       }
     }
   })
