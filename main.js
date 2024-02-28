@@ -383,6 +383,24 @@ function displayModal(){
           modalWindow.style.opacity = 0;
           modalWindow.style.visibility = "hidden";
         })
+
+        //buy-now
+        const buyNow = document.querySelector(".buy-now");
+        const modalWindowTwo = document.querySelector(".modal-window-2");
+        buyNow.addEventListener("click",function(){
+          modalWindow.style.opacity = 0;
+          modalWindow.style.visibility = "hidden";
+
+          modalWindowTwo.style.opacity = 1;
+          modalWindowTwo.style.visibility = "visible"
+        })
+
+        //close-btn-2
+        const closeBtnTwo = document.querySelector(".close-btn-2");
+        closeBtnTwo.addEventListener("click",function(){
+           modalWindowTwo.style.opacity = 0;
+           modalWindowTwo.style.visibility = "hidden";
+        })
       }
     }
   })
