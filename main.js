@@ -348,29 +348,39 @@ function displayMovies(){
 displayMovies()
 
 //display modal
+//displayModal
 function displayModal(){
  const bookTickets = document.querySelectorAll(".book-ticket");
- const modalWindow = document.querySelector(".modal-window");
+ const modalWindow = document.querySelector(".modal-window")
 
  for(let i = 0 ; i < bookTickets.length ; i++){
   bookTickets[i].addEventListener("click",function(){
     for(let j = 0 ; j < moviesArr.length ; j++){
       if(i === j){
-        const title = moviesArr[j].title;
+        const title = moviesArr[j].title; 
         const year = moviesArr[j].year;
         const price = moviesArr[j].ticketPrice;
         const vat = (price * 7) / 100;
-        const totalPrice = price * vat;
+        const totalPrice = price + vat;
 
         //modal open
         modalWindow.style.opacity = 1;
-        modalWindow.style.visibility = "visible";
+        modalWindow.style.visibility = "visible"
 
-        //modal data add
+        //modal innerhtml
+        modalWindow.innerHTML = `
+        <span class="close-btn">❌</span>
+        <h3 class="fw-bold">${title} ${year}</h3>
+        <p><strong>Price:</strong>${price}৳</p>
+        <p><strong>VAT:</strong>${vat}৳</p>
+        <p><strong>Subtotal:</strong>${totalPrice}৳</p>
+        <button class="btn btn-danger fw-bold mt-3">Buy Now</button>
+        `;
+
+        
       }
     }
   })
  }
-};
-
+}
 displayModal()
