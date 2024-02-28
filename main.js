@@ -346,3 +346,31 @@ function displayMovies(){
 }
 
 displayMovies()
+
+//display modal
+function displayModal(){
+ const bookTickets = document.querySelectorAll(".book-ticket");
+ const modalWindow = document.querySelector(".modal-window");
+
+ for(let i = 0 ; i < bookTickets.length ; i++){
+  bookTickets[i].addEventListener("click",function(){
+    for(let j = 0 ; j < moviesArr.length ; j++){
+      if(i === j){
+        const title = moviesArr[j].title;
+        const year = moviesArr[j].year;
+        const price = moviesArr[j].ticketPrice;
+        const vat = (price * 7) / 100;
+        const totalPrice = price * vat;
+
+        //modal open
+        modalWindow.style.opacity = 1;
+        modalWindow.style.visibility = "visible";
+
+        //modal data add
+      }
+    }
+  })
+ }
+};
+
+displayModal()
